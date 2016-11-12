@@ -5,14 +5,14 @@ const app = express();
 function url(url){
 	const reg= new RegExp('@?(https?:)?(\/\/)?((telegram|vk|vkontaktr)[^\/]*\/)?([a-zA-Z0-9]*)','i');
 	const username=url.match(reg);
-	name=(username)?username:'Invalid username';
+	name=(username)?("@"+username):'Invalid username';
 	return name;
 }
 
 app.get('/2C',(reg,res) => {
-	const name = url(reg.query.url);
+	const name = url(reg.query.username);
 	res.json({
-		url:reg.query.url,
+		url:reg.query.username,
 	    name,
 	});
 });
