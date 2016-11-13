@@ -3,7 +3,7 @@ import cors from 'cors';
 
 const app = express();
 function url(url){
-	const reg= new RegExp('@?(https?:)?(\/\/)?((telegram|vk|vkontaktr)[^\/]*\/)?([a-zA-Z0-9]*)','i');
+	const reg= new RegExp('@?(https?:)?(\/\/)?(www.)?((telegram|vk|vkontaktr)[^\/]*\/)?([a-zA-Z0-9]*)','i');
 	const username=url.match(reg);
 	const user=username[5];
 	const name=(user)?("@"+user):'Invalid username';
