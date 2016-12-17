@@ -9,8 +9,8 @@ function url(url){
 	const username=url.match(reg);
 	const l=username.length-1;
 	const u_name=username[l].split("/");
-	const user=u_name[0];
-	//const user=user_name.replace(/@/g,"");
+	const user_name=u_name[0];
+	const user=user_name.replace(/@/g,"");
 	const name=(user)?("@"+user):'Invalid username';
 	return name.toString();
 }
